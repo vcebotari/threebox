@@ -32,9 +32,6 @@ function loadObj(options, cb, promise) {
 		case "glb":
 			// [jscastro] Support for GLTF/GLB
 			loader = gltfLoader;
-			if (options.loader) {
-				loader = options.loader;
-			}
 			break;
 		case "fbx":
 			loader = fbxLoader;

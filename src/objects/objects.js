@@ -211,31 +211,31 @@ Objects.prototype = {
 			//[jscastro] added method to create a bounding box and a shadow box
 			obj.drawBoundingBox = function () {
 				//let's create 2 wireframes, one for the object and one to project on the floor position
-				let bb = obj.box3();
-				//create the group to return
-				let boxGroup = new THREE.Group();
-				boxGroup.name = "boxGroup";
-				boxGroup.updateMatrixWorld(true);
-				let boxModel = new THREE.Box3Helper(bb, Objects.prototype._defaults.colors.yellow);
-				boxModel.name = "boxModel";
-				boxGroup.add(boxModel);
-				boxModel.layers.disable(0); // it makes the object invisible for the raycaster
-				//obj.boundingBox = boxModel;
+				// let bb = obj.box3();
+				// //create the group to return
+				// let boxGroup = new THREE.Group();
+				// boxGroup.name = "boxGroup";
+				// boxGroup.updateMatrixWorld(true);
+				// let boxModel = new THREE.Box3Helper(bb, Objects.prototype._defaults.colors.yellow);
+				// boxModel.name = "boxModel";
+				// boxGroup.add(boxModel);
+				// boxModel.layers.disable(0); // it makes the object invisible for the raycaster
+				// //obj.boundingBox = boxModel;
 
-				//it needs to clone, to avoid changing the object by reference
-				let bb2 = bb.clone();
-				//we make the second box flat and at the floor height level
-				bb2.max.z = bb2.min.z;
-				let boxShadow = new THREE.Box3Helper(bb2, Objects.prototype._defaults.colors.black);
-				boxShadow.name = "boxShadow";
+				// //it needs to clone, to avoid changing the object by reference
+				// let bb2 = bb.clone();
+				// //we make the second box flat and at the floor height level
+				// bb2.max.z = bb2.min.z;
+				// let boxShadow = new THREE.Box3Helper(bb2, Objects.prototype._defaults.colors.black);
+				// boxShadow.name = "boxShadow";
 
-				boxGroup.add(boxShadow);
-				boxShadow.layers.disable(0); // it makes the object invisible for the raycaster
-				//obj.boundingBoxShadow = boxShadow;
+				// boxGroup.add(boxShadow);
+				// boxShadow.layers.disable(0); // it makes the object invisible for the raycaster
+				// //obj.boundingBoxShadow = boxShadow;
 
-				boxGroup.visible = false; // visibility is managed from the parent
-				obj.scaleGroup.add(boxGroup);
-				obj.setBoundingBoxShadowFloor();
+				// boxGroup.visible = false; // visibility is managed from the parent
+				// obj.scaleGroup.add(boxGroup);
+				// obj.setBoundingBoxShadowFloor();
 			}
 
 			//[jscastro] added method to position the shadow box on the floor depending the object height
