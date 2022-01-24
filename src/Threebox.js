@@ -1119,7 +1119,7 @@ Threebox.prototype = {
 		this.scene.add(this.lights.ambientLight);
 
 		this.lights.dirLightBack = new THREE.DirectionalLight(0xffffff, 0.2),
-		this.lights.dirLightBack.set(0, 1, 0).normalize();
+		this.lights.dirLightBack.position.set(0, 1, 0).normalize();
 		this.scene.add(this.lights.dirLightBack);
 
 		this.lights.dirLight  = new THREE.DirectionalLight(0xffffff, 0.2),
