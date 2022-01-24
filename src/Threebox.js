@@ -1115,15 +1115,15 @@ Threebox.prototype = {
 
 	defaultLights: function () {
 
-		this.lights.ambientLight = new THREE.AmbientLight(new THREE.Color('hsl(0, 0%, 100%)'), 0.75);
+		this.lights.ambientLight = new THREE.AmbientLight(0xffffff, 0.5),
 		this.scene.add(this.lights.ambientLight);
 
-		this.lights.dirLightBack = new THREE.DirectionalLight(new THREE.Color('hsl(0, 0%, 100%)'), 0.25);
-		this.lights.dirLightBack.position.set(30, 100, 100);
+		this.lights.dirLightBack = new THREE.DirectionalLight(0xffffff, 0.2),
+		this.lights.dirLightBack.set(0, 1, 0).normalize();
 		this.scene.add(this.lights.dirLightBack);
 
-		this.lights.dirLight  = new THREE.DirectionalLight(new THREE.Color('hsl(0, 0%, 100%)'), 0.25);
-		this.lights.dirLight.position.set(-30, 100, -100);
+		this.lights.dirLight  = new THREE.DirectionalLight(0xffffff, 0.2),
+		this.lights.dirLight.position.set(-1, 1, 0).normalize();
 		this.scene.add(this.lights.dirLight);
 
 	},
