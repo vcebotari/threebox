@@ -1066,7 +1066,6 @@ Objects.prototype = {
 			obj: null,
 			units: 'scene',
 			scale: 1,
-			loader: null,
 			rotation: 0,
 			defaultAnimation: 0,
 			anchor: 'bottom-left',
